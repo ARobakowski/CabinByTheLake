@@ -1,0 +1,304 @@
+* {
+    font-family: 'Kaisei Decol', serif;
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+html {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: black;
+}
+
+/* Header section starts */
+
+header { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    padding: 1% 1%;
+    z-index: 1;
+}
+
+header .logo {   
+    font-size: 2.5rem;
+    margin-left: 1rem;
+    color: wheat;
+    position: sticky;
+}
+
+header .navbar a {
+    position: relative;
+    font-size: 1.2rem;
+    color: white;
+    margin: 0 .5rem;
+}
+
+header .navbar a:after {
+    content: "";
+    position: absolute;
+    background-color: wheat;
+    height: .2rem;
+    width: 0%;
+    left: 0; bottom: -.3rem;
+    transition: ease-out 0.3s;
+}
+
+header .navbar a:hover:after {
+    color: wheat;
+    width: 100%;
+}
+
+header .hamburger {
+    display: none;
+}
+.home {
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.home .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.home .content h1 {
+    font-size: 10rem;
+    color: wheat;
+}
+
+.home .content button {
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: 2px solid wheat;
+    border-radius: .5rem;
+    padding: 0.2rem 0.5rem;
+    transition: linear 0.3s;
+}
+
+.home .content button:hover {
+    cursor: pointer;
+    color: rgb(94, 83, 83);
+    background-color: wheat;
+}
+
+/* Header sections ends */
+
+/* About us section starts */
+
+.about-us {
+    min-height: 100vh;
+}
+
+.about-us .content {
+    display: grid; 
+    color: white;
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.about-us .content .column-1 {
+    position: sticky;
+    align-self: start;
+    margin-left: 1rem;
+    top: 0;
+    font-size: 5rem;
+}
+
+.about-us .content .column-2 .offer-row {
+    display: grid;
+    text-align: center;
+    gap: 0 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+}
+
+.about-us .content .column-2 .offer-row .offer i {
+    color: wheat;
+    font-size: 3rem;
+}
+
+.about-us .content .column-2 .offer-row .offer h2 {
+    color: white;
+    font-size: 2rem;
+}
+
+.about-us .content .column-2 .offer-row .offer p {
+    color: white;
+    font-size: 1rem;
+    margin: 1.5rem 0rem;
+}
+/* About us sections ends */
+
+/* Gallery section starts */
+
+.gallery{
+    position: relative;
+}
+
+.gallery .slide {
+    height: 100vh; width: 100vw;
+}
+
+.gallery .gallery-info {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 5rem;
+    margin-left: 2rem;
+    padding: 3rem 1rem;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.9);
+    background-size: 33rem;
+}
+
+.gallery .gallery-info h3 {
+    font-size: 3rem;
+}
+
+.gallery .gallery-info p {
+    font-size: 1.5rem;
+}
+
+/* Gallery section ends */
+
+/* Contact section starts */
+
+.contact {
+    min-height: 30vh;
+    margin: 1rem 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contact i {
+    font-size: 2rem;
+    color: wheat;
+    margin: 0.5rem 2rem;
+}
+
+.contact  h3 {
+    color: wheat;
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.contact  p {
+    color: white;
+    text-align: left;
+}
+
+.contact .media {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.contact .media a {
+    color: white;
+}
+
+/* Contact section ends */
+
+
+/* Mobile phones */
+@media(max-width: 768px) { 
+
+    header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    header .logo, header .navbar {
+        display: none;
+    }
+
+    header .navbar.show {
+        display: flex;
+        margin-top: 3rem;
+        flex-direction: column;
+    }
+
+    header .hamburger {
+        display: block;
+        position: absolute;
+        top: 0;
+        color: white;
+        font-size: 2rem;
+        background-color: transparent;
+        border: none;
+        margin: .5rem;
+    }
+
+    .home .content h1 {
+        font-size: 3rem;
+    }
+
+    .about-us .content .column-1 {
+        display: none;
+    }
+
+    .about-us .content .column-2 .offer-row {
+        display: grid;
+        width: 100vw;
+        gap: 0 2rem;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .gallery .slide {
+        height: 33vh; width: 100vw;
+    }
+
+    .gallery .gallery-info {
+        display: none;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    .contact i {
+        font-size: 1.5rem;
+    }
+
+    .contact h3 {
+        font-size: 2rem;
+    }
+
+    .contact p {
+        font-size: 1rem;
+    }
+
+    .contact .location {
+        text-align: center;
+    }
+
+    .contact .media i {
+        margin: .5rem;
+    }
+
+    .contact .media a {
+        font-size: 1rem;
+    }
+
+
+}
