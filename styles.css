@@ -17,6 +17,76 @@ body {
   max-width: 100vw;
 }
 
+/* Aside */
+
+.modal {
+  position: absolute;
+  z-index: 3;
+  width: 100%; height: 100%;
+  background-color: white;
+  padding: 1rem;
+  /* display: none; */
+}
+
+.modal #exitModal {
+  position: absolute;
+  top: .5rem; right: .5rem;
+  background: none;
+  border: none;
+}
+
+.modal label {
+  font-size: 1rem;
+  text-align: center;
+  color: gray;
+}
+
+.modal input, .modal select, .modal textarea {
+  border-style: none;
+  border-bottom: .1rem rgb(0, 0, 0) solid;
+  outline: none;
+}
+
+.fa-xmark {
+  font-size: 2rem;
+  color: red;
+}
+
+.modal h3 {
+  text-align: center;
+  margin: .5rem 0rem;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.date-picker {
+  display: flex;
+  flex-direction: column;
+}
+
+#submit-reservation {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+  color: white;
+  background-color: black;
+  border-color: black;
+  border-radius: 5px;
+}
+
+#backdrop {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: none;
+}
+
 /* Header section starts */
 
 header .navbar a {
@@ -245,6 +315,50 @@ header .hamburger {
     html {
         font-size: 40px;
     }
+
+    /* Aside section starts */
+
+    .modal {
+      position: fixed;
+      top: 10%;
+      left: 69%;
+      width: 30%; height: auto;
+      background-color: white;
+      padding: .5rem;
+      border-radius: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      display: none;
+    }
+    
+    .modal h3 {
+      text-align: center;
+      font-size: .8rem;
+    }
+
+    .modal p {
+      font-size: .5rem;
+    }
+
+    .modal label {
+      font-size: .5rem;
+    }
+
+    .fa-xmark {
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+
+    #submit-reservation {
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Aside section ends */
 
   /* Header section starts */
 

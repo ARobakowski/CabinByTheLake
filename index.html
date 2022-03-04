@@ -15,10 +15,40 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- <script src="form.js" defer></script> -->
     <script src="main.js" defer></script>
     <title>CabinByTheLake</title>
   </head>
   <body>
+    <div id="backdrop"></div>
+    <aside class="modal" id="modal">
+      <button id="exitModal"><i class="fa-solid fa-xmark"></i></button>
+      <h3>Your stay</h3>
+      <form>
+        <label for="name">Name</label>
+        <input type="text" id="name">
+        <label for="email">Email</label>
+        <input type="email" name="email" id="email">
+        <label for="beds">Number of beds</label>
+        <select name="beds" id="beds">
+          <option value="oneBed">1 Bed</option>
+          <option value="twoBeds">2 Beds</option>
+        </select>
+        <label for="guests">Number of guests</label>
+        <input type="number" name="guests" id="guests" min="1" max="6" value = "1">
+        <div class="date-picker">
+          <label for="check-in">Check in</label>
+          <input type="date" name="check-in" id="check-in">
+          <label for="check-out">Check out</label>
+          <input type="date" name="check-out" id="check-out">
+        </div>
+        <p id="stayDays">Total days:</p>
+        <label for="msg">Your message</label>
+        <textarea name="msg" id="msg" cols="30" rows="5"></textarea>
+        <p id="price">Total price:</p>
+        <button type="submit" id="submit-reservation">Submit</button>
+      </form>
+    </aside>
     <!-- Header section starts -->
     <header>
       <a href="" class="logo"><i class="fa-solid fa-campground"></i></a>
@@ -41,7 +71,7 @@
     <section class="home" id="home">
       <div class="content">
         <h1>Cabin by the lake</h1>
-        <button>Reservation</button>
+        <button id="reservation-btn">Reservation</button>
       </div>
     </section>
     <!-- Home section ends -->
